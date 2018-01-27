@@ -145,8 +145,8 @@ $(function () {
 
 $('.multiple-items').slick({
     infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 2,
+    slidesToShow: 3,
+    slidesToScroll: 1,
     // asNavFor: '.slider-for',
     dots: true,
     centerMode: true,
