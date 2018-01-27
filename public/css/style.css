@@ -90,4 +90,7 @@ body {
   font-size: 16px;
   font-weight: "500";
 }
->>>>>>> 39e650c8f5547b65662bdad4113b5e3a7f64b0d4
+
+.slick-slide {
+    text-align: center;
+}

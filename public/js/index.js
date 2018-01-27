@@ -161,5 +161,6 @@ $('.multiple-items').slick({
     slidesToScroll: 1,
     dots: true,
     centerMode: true,
-    focusOnSelect: true
+    focusOnSelect: true,
+    arrows: true
 });
