@@ -27,6 +27,11 @@ function addEvent(formData){
     });
 }
 
+function signUpOnClick(evt) {
+    var eventId = evt.target.id.replace('signup_', '')
+    window.location.href = '/event/' + eventId
+}
+
 function populateCategories() {
     // categoriesDiv
     var catDiv = document.getElementById('categoriesDiv')
@@ -87,7 +92,9 @@ function populateEventsList() {
         divRight.appendChild(eventTime)
         var signUpBtn = document.createElement('button')
         signUpBtn.className = "signUpButton"
+        signUpBtn.id = 'signup_' + event.id
         signUpBtn.innerText = "Sign Up"
+        signUpBtn.onclick = signUpOnClick
         divRight.appendChild(signUpBtn)
         eventDiv.appendChild(divLeft)
         eventDiv.appendChild(divRight)

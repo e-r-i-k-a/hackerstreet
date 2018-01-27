@@ -1,3 +1,32 @@
+body {
+  margin: 0px;
+}
+
+#topNav {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  min-width: 50px;
+  background-color: #B81F30
+}
+
+#topNav > div {
+  display: flex;
+  align-items: center;
+  color: white;
+  flex: 0.5;
+}
+
+#topNav > .leftDiv {
+  justify-content: flex-start;
+  padding-left: 20px;
+}
+
+#topNav > .rightDiv {
+  justify-content: flex-end;
+  padding-right: 20px;
+}
 
 #categoriesDiv {
   padding-top: 30px;
