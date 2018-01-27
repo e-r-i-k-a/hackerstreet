@@ -1,5 +1,6 @@
 <html>
   <head>
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />
     <script>
       function getEvent() {
         console.log("here ")
@@ -9,16 +10,29 @@
           fetch('https://us-central1-hackerstreet-2b6df.cloudfunctions.net/api/event/' + afterSlash)
           .then(resp => resp.json())
           .then(event => {
+            if (event) {
+              document.getElementById('titleH1').innerHTML = event.Name
+              document.getElementById('descriptionP').innerText = event.Description
+              
+            } else {
+              document.getElementById('titleH1').innerHTML = 'No event found with that id.'
+
+            }
             console.log("event is: " + JSON.stringify(event, null, 2))
           })
         } else {
-          
+          document.getElementById('titleH1').innerHTML = 'Invalid'
         }
-        document.getElementById('titleH1').innerHTML = afterSlash
+        document.getElementById('titleH1').innerHTML = 'Loading event'
       }
     </script>
   </head>
-  <body onload="initialize();">
+  <body onload="getEvent();">
+    <nav id="topNav">
+      <div class="leftDiv">Henry Street</div>
+      <div class="rightDiv">Menu</div>
+    </nav>
     <h1 id="titleH1"></h1>
+    <p id="descriptionP"></p>
   </body>
 </html>
