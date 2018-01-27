@@ -25,7 +25,7 @@ var LOCATIONS = [
 
 LOCATIONS = LOCATIONS.map(function(_){
     if(!_.hasOwnProperty('Address')){ // Can't find address on Google Maps
-        _.Address = _.Center       
+        _.Address = _.Center
     }
     return _;
  });
@@ -90,7 +90,8 @@ function populateEventsList() {
         var divLeft = document.createElement('div')
         divLeft.className = 'eventDivLeft'
         var theImg = document.createElement('img')
-        theImg.src = 'http://via.placeholder.com/200x150'
+        theImg.src = event.img || 'http://via.placeholder.com/200x150'
+        theImg.style = "width: auto; height: auto; display: block; max-height: 100%; max-width:100%"
         divLeft.appendChild(theImg)
         var divRight = document.createElement('div')
         divRight.className = 'eventDivRight'
@@ -161,6 +162,5 @@ $('.multiple-items').slick({
     slidesToScroll: 1,
     dots: true,
     centerMode: true,
-    focusOnSelect: true,
-    arrows: true
+    focusOnSelect: true
 });
