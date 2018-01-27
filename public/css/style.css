@@ -1,8 +1,40 @@
 #search_form {
+  display: flex;
+  flex-direction: row;
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
+
+#search_form_input {
+  display: inline;
+  min-width: 30%;
+  right: 20px;
+  margin-right: 20px;
+}
+
+.fint_events_p {
+  font-size: 20px;
+}
+
+.searchLeft {
+  display: flex;
+  flex: 0.5;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 20px;
+  justify-content: flex-start;
+}
+
+.searchRight {
+  display: flex;
+  flex: 0.5;
+  flex-direction: row;
+  align-items: center;
+  padding-right: 20px;
+  justify-content: flex-end;
+}
+
 body {
   margin: 0px;
   font-family: Roboto;
