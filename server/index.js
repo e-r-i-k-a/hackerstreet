@@ -20,9 +20,25 @@ app.use(cors());
 const firebase = require('firebase');
 const PORT = 8081 || process.env.PORT;
 
-app.get('/events', (req,res)=>{
-
+app.get('/event', (req,res)=>{
+  firebase.database().ref('Event')
+  .once('value')
+  .then(snapshot => {
+    
+    res.json(snapshot.val())
+  })
 });
+
+app.get('/event/:id', (req,res)=>{
+  let eventID = req.params.id
+  firebase.database().ref('Event/'+eventID)
+  .once('value')
+  .then(snapshot => {
+    res.json(snapshot.val())
+  })
+});
+
+
 
 firebase.initializeApp(require('../FireBaseConfig'));
 
