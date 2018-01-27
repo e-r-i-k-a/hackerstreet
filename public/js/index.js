@@ -27,6 +27,26 @@ function addEvent(formData){
     });
 }
 
+function retrieveEvents() {
+    $.ajax('https://us-central1-hackerstreet-2b6df.cloudfunctions.net/api/event', {
+        method: 'GET',
+        success: function (events) {
+            // eventList
+            console.log("got back events")
+            var theUL = document.getElementById('eventList')
+            events.forEach(event => {
+                var li = document.createElement("li")
+                li.innerText = event.Name
+                theUL.appendChild(li)
+            })
+            console.log("after for loop")
+        },
+        fail(a,b,c) {
+            console.error(b);
+        }
+    })
+}
+
 $(function(){
     $('#calendar_add_event').click(function(e){
         e.preventDefault();
