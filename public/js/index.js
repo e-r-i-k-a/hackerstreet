@@ -150,5 +150,6 @@ $('.multiple-items').slick({
     // asNavFor: '.slider-for',
     dots: true,
     centerMode: true,
-    focusOnSelect: true
+    focusOnSelect: true,
+    arrows: true
 });
