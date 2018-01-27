@@ -94,7 +94,11 @@ body {
   flex-direction: row;
   width: 100%;
   height: 200px;
-  border: 2px solid black;
+  border: 2px solid #bbbbbb;
+  margin: 17px;
+  background-color: #eeeeee;
+  border-radius: 10px;
+  border: 2px;
 }
 
 .eventDivLeft {
@@ -113,7 +117,7 @@ body {
 }
 
 .signUpButton {
-  width: 90%;
+  width: 60%;
   height: 40px;
   background-color: #B81F30;
   display: flex;
