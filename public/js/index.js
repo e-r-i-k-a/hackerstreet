@@ -1,3 +1,4 @@
+'use strict';
 const CATEGORIES = [
     'Educational',
     'Social',
@@ -8,16 +9,26 @@ const CATEGORIES = [
     'Senior',
     'Career'
 ];
+
+var rootURL = 'https://us-central1-hackerstreet-2b6df.cloudfunctions.net/api/';
+
 /**
  *
  * @param {{}} formData
  */
 function addEvent(formData){
     //if (CATEGORIES.indexOf(){}
-    $.ajax('/events/add',{
+    var data = JSON.stringify(formData);
+    console.log(data);
+    $.ajax(rootURL+'event/add',{
         method: 'POST',
         dataType: 'json',
-        data: formData,
+        crossDomain: true,
+        data: data,
+        headers:{
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
         success: function(data){
             console.dir(data);
         },
@@ -46,8 +57,7 @@ $(function(){
             Organizer: $('#calendar_add_event_form_organizer').val(),
             PointOfContact: $('#calendar_add_event_form_contact').val()
         };
-        //addEvent(formData);
-        console.log(formData);
+        addEvent(formData);
     });
 });
 
