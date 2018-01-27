@@ -41,15 +41,17 @@ const onFireBaseSignInError = (signInError, res) =>{
 
 var onAddEvent = (req,res)=>{
   //console.log(req.body);
-  firebase.auth().signInAnonymously().then(()=>{
+  firebase.auth().signInAnonymously()
+  .then(()=>{
     let now = Date.now()
-    firebase.database ().ref('/Event/'+now.set(req.body,(err)=>{
+    firebase.database()
+    .ref('/Event/'+now.set(req.body,(err)=>{
       if(err){
         console.error(err.message, err.stack);
         res.status(500).send({error: 'cannot add event'});
       }
       else res.json({message: 'event posted', eventId: now});
-    });
+    }))
   })
   .catch(err => onFireBaseSignInError(err,res));
 };
