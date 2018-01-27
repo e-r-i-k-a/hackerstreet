@@ -62,6 +62,7 @@ body {
   width: 100%;
   height: 200px;
   border: 2px solid black;
+  margin: 17px;
 }
 
 .eventDivLeft {
@@ -80,7 +81,7 @@ body {
 }
 
 .signUpButton {
-  width: 90%;
+  width: 60%;
   height: 40px;
   background-color: #B81F30;
   display: flex;
@@ -90,4 +91,3 @@ body {
   font-size: 16px;
   font-weight: "500";
 }
->>>>>>> 39e650c8f5547b65662bdad4113b5e3a7f64b0d4
