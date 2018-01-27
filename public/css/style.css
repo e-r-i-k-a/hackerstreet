@@ -1,3 +1,37 @@
+.search_form {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+body {
+  margin: 0px;
+}
+
+#topNav {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  min-width: 50px;
+  background-color: #B81F30
+}
+
+#topNav > div {
+  display: flex;
+  align-items: center;
+  color: white;
+  flex: 0.5;
+}
+
+#topNav > .leftDiv {
+  justify-content: flex-start;
+  padding-left: 20px;
+}
+
+#topNav > .rightDiv {
+  justify-content: flex-end;
+  padding-right: 20px;
+}
 
 #categoriesDiv {
   padding-top: 30px;
@@ -56,3 +90,4 @@
   font-size: 16px;
   font-weight: "500";
 }
+>>>>>>> 39e650c8f5547b65662bdad4113b5e3a7f64b0d4
