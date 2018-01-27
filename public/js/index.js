@@ -27,19 +27,60 @@ function addEvent(formData){
     });
 }
 
+function populateCategories() {
+    // categoriesDiv
+    var catDiv = document.getElementById('categoriesDiv')
+    CATEGORIES.forEach(category => {
+        var categoryButton = document.createElement('button')
+        categoryButton.innerText = category
+        categoryButton.onclick = onFilter
+        catDiv.appendChild(categoryButton)
+    })
+}
+
+var events = []
+var filter = ''
+
+function initialize() {
+    retrieveEvents()
+    populateCategories()
+}
+
+function onFilter(evt) {
+    console.log("evt.target: " + evt.target.innerText)
+    filter = evt.target.innerText
+    populateEventsList()
+}
+
+function populateEventsList() {
+    var theUL = document.getElementById('eventList')
+    while (theUL.firstChild) {
+        theUL.removeChild(theUL.firstChild)
+    }
+    var eventsToUse = filter != '' ?
+        events.filter(event => {
+            return (event.Categories && event.Categories.includes(filter))
+        }) :
+        events
+    
+    eventsToUse.forEach(event => {
+        var li = document.createElement("li")
+        var div = document.createElement('div')
+
+        li.innerText = event.Name
+        theUL.appendChild(li)
+    })
+    console.log("after for loop")
+}
+
 function retrieveEvents() {
     $.ajax('https://us-central1-hackerstreet-2b6df.cloudfunctions.net/api/event', {
         method: 'GET',
-        success: function (events) {
+        success: function (eventsRetrieved) {
             // eventList
+            events = eventsRetrieved
             console.log("got back events")
-            var theUL = document.getElementById('eventList')
-            events.forEach(event => {
-                var li = document.createElement("li")
-                li.innerText = event.Name
-                theUL.appendChild(li)
-            })
-            console.log("after for loop")
+            populateEventsList()
         },
         fail(a,b,c) {
             console.error(b);
