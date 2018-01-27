@@ -1,0 +1,58 @@
+
+#categoriesDiv {
+  padding-top: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.categoryButton {
+  width: 120px;
+  height: 50px;
+  font-size: 20px;
+  background-color: transparent;
+  border: none;
+  margin: 10px;
+  color: #6B6B6B;
+  font-family: Roboto, sans-serif;
+}
+
+#eventList {
+  width: 90%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.eventDiv {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 200px;
+  border: 2px solid black;
+}
+
+.eventDivLeft {
+  display: flex;
+  flex: 0.3;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  min-width: 100px;
+}
+
+.eventDivRight {
+  flex-direction: column;
+  flex: 0.7;
+}
+
+.signUpButton {
+  width: 90%;
+  height: 40px;
+  background-color: #B81F30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 16px;
+  font-weight: "500";
+}
