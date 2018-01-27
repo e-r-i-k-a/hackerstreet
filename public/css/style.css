@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+.search_form {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+=======
 body {
   margin: 0px;
 }
@@ -85,3 +92,4 @@ body {
   font-size: 16px;
   font-weight: "500";
 }
+>>>>>>> e48616b063fb158eee51c8f201b0c4a4ff0e90b3
