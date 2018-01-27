@@ -34,14 +34,15 @@ const onFireBaseSignInError = (signInError, res) =>{
 };
 
 /**
- * 
- * @param {{body: {ID: number, Categories:[String],Descrition: String, Attendees: [{}], name:String }}} req 
- * @param {*} res 
+ *
+ * @param {{body: {ID: number, Categories:[String],Descrition: String, Attendees: [{}], name:String }}} req
+ * @param {*} res
  */
+
 var onAddEvent = (req,res)=>{
   //console.log(req.body);
   firebase.auth().signInAnonymously().then(()=>{
-    firebase.database ().ref('/Event/'+req.body.ID).set(req.body,(err)=>{
+    firebase.database ().ref('/Event/'+Date.now()).set(req.body,(err)=>{
       if(err){
         console.error(err.message, err.stack);
         res.status(500).send({error: 'cannot add event'});
@@ -55,9 +56,9 @@ var onAddEvent = (req,res)=>{
 app.post('/events/add', onAddEvent);
 
 /**
- * 
- * @param {{body: {id: number, eventId: number, phone: String, email: String }}} req 
- * @param {*} res 
+ *
+ * @param {{body: {id: number, eventId: number, phone: String, email: String }}} req
+ * @param {*} res
  */
 var onRsvp = (req,res)=>{
   firebase.auth().signInAnonymously().then(()=>{
