@@ -32,6 +32,7 @@ function populateCategories() {
     var catDiv = document.getElementById('categoriesDiv')
     CATEGORIES.forEach(category => {
         var categoryButton = document.createElement('button')
+        categoryButton.className = "categoryButton"
         categoryButton.innerText = category
         categoryButton.onclick = onFilter
         catDiv.appendChild(categoryButton)
