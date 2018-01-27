@@ -19,6 +19,7 @@ app.use(cors());
 
 const firebase = require('firebase');
 const PORT = 8081 || process.env.PORT;
+const ngrok = require('ngrok');
 
 app.get('/event', (req,res)=>{
   firebase.database().ref('Event')
@@ -106,4 +107,7 @@ app.post(['/events/sign-up'], onRsvp );
 
 app.listen(PORT,()=>{
   console.log('listening');
+  // ngrok.connect((e,r)=>{
+  //   console.log(r);
+  // })
 });
