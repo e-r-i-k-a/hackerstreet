@@ -1,32 +1,58 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Henry Street Settlement Events & Services</title>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-    <nav></nav>
-    <form id="search_form">
-        <input name="search_form_input" placeholder="What are you looking for?" />
-        <button id="search_form_button">Search</button>
-    </form>
-    <div id="calendar">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Henry Street Settlement Events & Services</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" rel="stylesheet" type="text/css" />
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <nav></nav>
+  <form id="search_form">
+    <input name="search_form_input" placeholder="What are you looking for?" />
+    <button id="search_form_button">Search</button>
+  </form>
+
+  <div id="calendar">
+
+    <div id="calendar_carousel">
+      <div id="calendar_carousel_1">
+        <h4 class="day_of_week"></h4>
+        <h3 class="number_date"></h3>
+      </div>
+
+      <div id="calendar_carousel_2">
+        <h4 class="day_of_week"></h4>
+        <h3 class="number_date"></h3>
+      </div>
+
+      <div id="calendar_carousel_3">
+        <h4 class="day_of_week"></h4>
+        <h3 class="number_date"></h3>
+      </div>
 
     </div>
-    <button id="calendar_add_event">Add Event</button>
-    <form id="calendar_add_event_form">
-        <input name="calendar_add_event_form_name" placeholder="Name"/>
-        <input name="calendar_add_event_form_description" placeholder="Description"/>
-        <input type="date" name="calendar_add_event_form_date" placeholder="Date"/>
-        <input type="time" name="calendar_add_event_form_time" placeholder="Time"/>
-        <label>Categories</label><select id="calendar_add_event_form_categories"></select>
-        <label>Organizer</label><select id="calendar_add_event_form_organizer"></select>
-        <input name="calendar_add_event_form_contact" placeholder="Email"/>
-        <button id="calendar_add_event_form_submit">Submit</button>
-    </form>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/index.js"></script>
-  </body>
+  </div>
+
+  <button id="calendar_add_event">Add Event</button>
+  <form id="calendar_add_event_form">
+    <input name="calendar_add_event_form_name" placeholder="Name" />
+    <input name="calendar_add_event_form_description" placeholder="Description" />
+    <input type="date" name="calendar_add_event_form_date" placeholder="Date" />
+    <input type="time" name="calendar_add_event_form_time" placeholder="Time" />
+    <label>Categories</label>
+    <select id="calendar_add_event_form_categories"></select>
+    <label>Organizer</label>
+    <select id="calendar_add_event_form_organizer"></select>
+    <input name="calendar_add_event_form_contact" placeholder="Email" />
+    <button id="calendar_add_event_form_submit">Submit</button>
+  </form>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js" type="text/javascript"></script>
+  <script src="js/index.js"></script>
+</body>
+
 </html>
