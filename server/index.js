@@ -24,8 +24,17 @@ app.get('/event', (req,res)=>{
   firebase.database().ref('Event')
   .once('value')
   .then(snapshot => {
-    
-    res.json(snapshot.val())
+    let events = Object.keys(snapshot.val()).map(key => {
+      return Object.assign({id:key}, snapshot.val()[key])
+    })
+    if(req.query.category){
+      console.log("IT WORKS", req.query.category)
+      events = events.filter(event => {
+        return event.Categories.includes(req.query.category)
+      })
+      console.log("EVENTS", events)
+    }
+    res.json(events)
   })
 });
 
@@ -37,6 +46,7 @@ app.get('/event/:id', (req,res)=>{
     res.json(snapshot.val())
   })
 });
+
 
 
 
