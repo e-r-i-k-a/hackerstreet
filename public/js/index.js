@@ -10,6 +10,26 @@ const CATEGORIES = [
     'Career'
 ];
 
+var LOCATIONS = [
+    { Organizer: 'John Doe', Center: 'Abrons Arts Center', Address: '466 Grand St, New York, NY 10002' },
+    { Organizer: 'Jane Doe', Center: 'ATTAIN Computer Lab', Address: '211 Jefferson St, Staten Island, NY 10306' },
+    { Organizer: 'Jim Doe', Center: 'Boys & Girls Republic' },
+    { Organizer: 'Jen Doe', Center: 'Community Consultation Center', Address:'40 Montgomery St, New York, NY 10002' },
+    { Organizer: 'John Doe', Center: 'Early Childhood Education Center', Address: '40 Montgomery St, New York, NY 10002' },
+    { Organizer: 'John Doe', Center: 'Healthcare Insurance Access Program' },
+    { Organizer:'Jen Doe', Center:'Health Unlimited Family Medical Center', Address: 'Health Unlimited Family Medical Center'},
+    { Organizer: 'Jen Doe', Center: 'Henry Street Settlement Senior Center',Address: '334 Madison St, New York, NY 10002' },
+    { Organizer: 'Jim Doe', Center: 'Home Planning Workshop',Address: ''},
+    { Organizer:'Jim Doe', Center: 'Workforce Development Welcome Center/Jobs Plus',Address: '335 E 111th St, New York, NY 10029'}
+];
+
+LOCATIONS = LOCATIONS.map(function(_){
+    if(!_.hasOwnProperty('Address')){ // Can't find address on Google Maps
+        _.Address = _.Center       
+    }
+    return _;
+ });
+
 var rootURL = 'https://us-central1-hackerstreet-2b6df.cloudfunctions.net/api/';
 
 /**
@@ -18,13 +38,12 @@ var rootURL = 'https://us-central1-hackerstreet-2b6df.cloudfunctions.net/api/';
  */
 function addEvent(formData){
     //if (CATEGORIES.indexOf(){}
-    var data = JSON.stringify(formData);
     console.log(data);
     $.ajax(rootURL+'event/add',{
         method: 'POST',
         dataType: 'json',
         crossDomain: true,
-        data: data,
+        data: JSON.stringify(formData),
         headers:{
             "Content-Type": "application/json",
             "Accept": "application/json"
