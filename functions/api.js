@@ -59,22 +59,20 @@ const onFireBaseSignInError = (signInError, res) =>{
 
 var onAddEvent = (req,res)=>{
   //console.log(req.body);
-  admin.auth().signInAnonymously()
-  .then(()=>{
-    let now = Date.now()
-    db
-    .ref('/Event/'+now.set(req.body,(err)=>{
+
+    let now = Date.now().toString()
+    db.ref('/Event/'+now).set(req.body,(err)=>{
       if(err){
         console.error(err.message, err.stack);
         res.status(500).send({error: 'cannot add event'});
       }
       else res.json({message: 'event posted', eventId: now});
-    }))
-  })
-  .catch(err => onFireBaseSignInError(err,res));
+    });
+  
+
 };
 
-app.post('/events/add', onAddEvent);
+app.post('/event/add', onAddEvent);
 
 /**
  *

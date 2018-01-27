@@ -8,6 +8,22 @@
     ],
     "rewrites": [
       {
+        "source": "/login",
+        "destination": "/login.html"
+      },
+      {
+        "source": "/events",
+        "destination": "/events.html"
+      },
+      {
+        "source": "/events/add",
+        "destination": "/add-event.html"
+      },
+      {
+        "source": "/event/**",
+        "destination": "/event.html"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }
