@@ -1,4 +1,4 @@
-var CATEGORIES = [
+const CATEGORIES = [
     'Educational',
     'Social',
     'Sports',
@@ -9,8 +9,8 @@ var CATEGORIES = [
     'Career'
 ];
 /**
- * 
- * @param {{}} formData 
+ *
+ * @param {{}} formData
  */
 function addEvent(formData){
     //if (CATEGORIES.indexOf(){}
@@ -50,3 +50,14 @@ $(function(){
         console.log(formData);
     });
 });
+
+$(document).ready(function() {
+    $('.calendar_carousel').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        asNavFor: '.slider-for',
+        dots: true,
+        centerMode: true,
+        focusOnSelect: true
+      });
+})
