@@ -13,7 +13,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "node server",
-    "start": "node server"
+    "deploy": "firebase deploy --only hosting"
   },
   "repository": {
     "type": "git",
