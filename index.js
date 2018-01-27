@@ -15,7 +15,7 @@ const cors = require('cors');
 const app = express();
 
 app.use(bodyParser.json());
-app.use
+app.use(cors());
 const PORT = 8081 || process.env.PORT;
 
 app.get('/events', (req,res)=>{
