@@ -9,7 +9,7 @@
   <link href="css/style.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body>
+<body onload="initialize();">
   <nav></nav>
   <form id="search_form">
     <input name="search_form_input" placeholder="What are you looking for?" />
@@ -50,6 +50,11 @@
     <input name="calendar_add_event_form_contact" placeholder="Email" />
     <button id="calendar_add_event_form_submit">Submit</button>
   </form>
+  <div id="categoriesDiv">
+  </div>
+  <ul id="eventList">
+
+  </ul>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js" type="text/javascript"></script>
   <script src="js/index.js"></script>
