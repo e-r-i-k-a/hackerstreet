@@ -6,10 +6,12 @@
   <meta name="viewport" content="width=device-width">
   <title>Henry Street Settlement Events & Services</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" rel="stylesheet" type="text/css" />
+  <link href=“https://fonts.googleapis.com/css?family=Roboto” rel=“stylesheet”>
   <link href="css/style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body onload="initialize();">
+<<<<<<< HEAD
   <nav></nav>
 
     <form id="search_form">
@@ -20,6 +22,16 @@
         </a>
       </p>
     </form>
+=======
+  <nav id="topNav">
+    <div class="leftDiv">Henry Street</div>
+    <div class="rightDiv">Menu</div>
+  </nav>
+  <form id="search_form">
+    <input name="search_form_input" placeholder="What are you looking for?" />
+    <button id="search_form_button">Search</button>
+  </form>
+>>>>>>> e48616b063fb158eee51c8f201b0c4a4ff0e90b3
 
   <div id="calendar">
 
@@ -41,20 +53,7 @@
 
     </div>
   </div>
-
-  <button id="calendar_add_event">Add Event</button>
-  <form id="calendar_add_event_form">
-    <input name="calendar_add_event_form_name" placeholder="Name" />
-    <input name="calendar_add_event_form_description" placeholder="Description" />
-    <input type="date" name="calendar_add_event_form_date" placeholder="Date" />
-    <input type="time" name="calendar_add_event_form_time" placeholder="Time" />
-    <label>Categories</label>
-    <select id="calendar_add_event_form_categories"></select>
-    <label>Organizer</label>
-    <select id="calendar_add_event_form_organizer"></select>
-    <input name="calendar_add_event_form_contact" placeholder="Email" />
-    <button id="calendar_add_event_form_submit">Submit</button>
-  </form>
+  
   <div id="categoriesDiv">
   </div>
   <ul id="eventList">
