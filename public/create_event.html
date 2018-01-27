@@ -1,0 +1,95 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Henry Street Settlement Events & Services</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" rel="stylesheet" type="text/css" />
+    <link href=“https://fonts.googleapis.com/css?family=Roboto” rel=“stylesheet”>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <style>
+      body{
+        font-family: ‘Roboto’, sans-serif;
+      }
+
+      input, textarea, select{
+          width: 90%;
+          horizontal-align: center;
+          padding-bottom: 6px;
+          margin-bottom: 6px
+      }
+
+      input, select{
+          min-height: 39px;
+          border: 1px solid #6D6D6D;
+      }
+
+      textarea{
+          min-height: 117px;
+          border: 1px solid #6D6D6D;
+      }
+
+      #bb{
+          background: #B81F32
+      }
+
+      #calendar_add_event_form_submit{
+        background-color: #B81F32;
+        min-height: 47px;	
+        min-width: 210px;
+        horizontal-align:center;
+        color: aliceblue
+      }
+
+     
+
+      h1{
+          text-align: center
+      }
+  </style>
+  <body>
+      <h1>Create An Event</h1>
+      <center>
+        <form id="calendar_add_event_form">
+            <center>
+            <input name="calendar_add_event_form_name" placeholder="Enter Event Name" />
+            </center>
+            <center>
+                <label>Categories</label>
+            </center>
+            <center>
+                <select id="calendar_add_event_form_categories"></select>
+            </center>
+            <center>
+                <textarea name="calendar_add_event_form_description" placeholder="Description" ></textarea>
+            </center>
+            <center>
+                <input type="date" name="calendar_add_event_form_date" placeholder="Date" />
+            </center>
+            <center>
+                <input type="time" name="calendar_add_event_form_time" placeholder="Time" />
+            </center>
+            
+            <center>
+            <label>Organizer</label>
+            </center>
+            <center>
+            <select id="calendar_add_event_form_organizer"></select>
+            </center>
+            <center>
+            <input name="calendar_add_event_form_contact" placeholder="Email" />
+            </center>
+            <center>
+                    
+                <input type="file" value="Add Image"    
+                    placeholder="Add Image" />
+            </center>
+            <center>
+            <button id="calendar_add_event_form_submit">Submit</button>
+            </center>
+          </form>
+      </center>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="js/create_event.js"></script>
+  </body>
+  </html>
