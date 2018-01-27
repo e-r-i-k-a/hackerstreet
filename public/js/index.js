@@ -52,10 +52,10 @@ $(function(){
 });
 
 $(document).ready(function() {
-    $('.calendar_carousel').slick({
+    $('.slider-nav').slick({
         slidesToShow: 3,
         slidesToScroll: 1,
-        asNavFor: '.slider-for',
+        // asNavFor: '.slider-for',
         dots: true,
         centerMode: true,
         focusOnSelect: true
