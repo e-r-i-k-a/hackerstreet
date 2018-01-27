@@ -2,18 +2,23 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
+const admin = require('firebase-admin');
+
+var db = admin.database();
 
 app.use(bodyParser.json());
 app.use(cors());
-app.use(express.static('public'));
+
 
 const firebase = require('firebase');
 const PORT = 8081 || process.env.PORT;
 
 app.get('/event', (req,res)=>{
-  firebase.database().ref('Event')
+    console.log("HEY")
+  db.ref('Event')
   .once('value')
   .then(snapshot => {
+    console.log("HEY2")
     let events = Object.keys(snapshot.val()).map(key => {
       return Object.assign({id:key}, snapshot.val()[key])
     })
@@ -30,17 +35,14 @@ app.get('/event', (req,res)=>{
 
 app.get('/event/:id', (req,res)=>{
   let eventID = req.params.id
-  firebase.database().ref('Event/'+eventID)
+  db.ref('Event/'+eventID)
   .once('value')
   .then(snapshot => {
     res.json(snapshot.val())
   })
 });
 
-
-
-
-firebase.initializeApp(require('../FireBaseConfig'));
+// firebase.initializeApp(require('../FireBaseConfig'));
 
 const onFireBaseSignInError = (signInError, res) =>{
   if (signInError){
@@ -57,10 +59,10 @@ const onFireBaseSignInError = (signInError, res) =>{
 
 var onAddEvent = (req,res)=>{
   //console.log(req.body);
-  firebase.auth().signInAnonymously()
+  admin.auth().signInAnonymously()
   .then(()=>{
     let now = Date.now()
-    firebase.database()
+    db
     .ref('/Event/'+now.set(req.body,(err)=>{
       if(err){
         console.error(err.message, err.stack);
@@ -80,8 +82,8 @@ app.post('/events/add', onAddEvent);
  * @param {*} res
  */
 var onRsvp = (req,res)=>{
-  firebase.auth().signInAnonymously().then(()=>{
-    firebase.database().ref('/Event/'+req.body.eventId).child('Attendees').set({
+  admin.auth().signInAnonymously().then(()=>{
+    db.ref('/Event/'+req.body.eventId).child('Attendees').set({
       id: req.body.id,
       phone: req.body.phone,
       email: req.body.email
@@ -94,9 +96,4 @@ var onRsvp = (req,res)=>{
 
 app.post(['/events/sign-up'], onRsvp );
 
-app.listen(PORT,()=>{
-  console.log('listening');
-  // ngrok.connect((e,r)=>{
-  //   console.log(r);
-  // })
-});
+module.exports={app}
