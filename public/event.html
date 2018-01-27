@@ -13,7 +13,8 @@
             if (event) {
               document.getElementById('titleH1').innerHTML = event.Name
               document.getElementById('descriptionP').innerText = event.Description
-              
+              document.getElementById('dateH4').innerText = event.Date
+              document.getElementById('timeH4').innerText = event.Time
             } else {
               document.getElementById('titleH1').innerHTML = 'No event found with that id.'
 
@@ -32,7 +33,19 @@
       <div class="leftDiv">Henry Street</div>
       <div class="rightDiv">Menu</div>
     </nav>
-    <h1 id="titleH1"></h1>
-    <p id="descriptionP"></p>
+    <div class="contentDiv">
+      <div class="eventInfoDiv">
+        <h1 id="titleH1"></h1>
+        <h4 id="dateH4"></h4>
+        <h4 id="timeH4"></h4>
+        <p id="descriptionP"></p>
+      </div>
+      <div class="signupFormDiv">
+        <h2>Sign Up</h2>
+        <input type="text" placeholder="Name" />
+        <button>Sign up</button>
+      </div>
+      
+    </div>
   </body>
 </html>
