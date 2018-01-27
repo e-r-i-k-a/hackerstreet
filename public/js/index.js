@@ -62,6 +62,7 @@ function populateCategories() {
     var catDiv = document.getElementById('categoriesDiv')
     CATEGORIES.forEach(category => {
         var categoryButton = document.createElement('button')
+        categoryButton.className = "categoryButton"
         categoryButton.innerText = category
         categoryButton.onclick = onFilter
         catDiv.appendChild(categoryButton)
@@ -95,9 +96,32 @@ function populateEventsList() {
     
     eventsToUse.forEach(event => {
         var li = document.createElement("li")
-        var div = document.createElement('div')
-
-        li.innerText = event.Name
+        li.style['list-style'] = 'none'
+        var eventDiv = document.createElement('div')
+        eventDiv.className = "eventDiv"
+        var divLeft = document.createElement('div')
+        divLeft.className = 'eventDivLeft'
+        var theImg = document.createElement('img')
+        theImg.src = 'http://via.placeholder.com/200x150'
+        divLeft.appendChild(theImg)
+        var divRight = document.createElement('div')
+        divRight.className = 'eventDivRight'
+        var eventTitle = document.createElement('h3')
+        eventTitle.innerText = event.Name
+        divRight.appendChild(eventTitle)
+        var eventDate = document.createElement('p')
+        var eventTime = document.createElement('p')
+        eventDate.innerText = event.Date
+        eventTime.innerText = event.Time
+        divRight.appendChild(eventDate)
+        divRight.appendChild(eventTime)
+        var signUpBtn = document.createElement('button')
+        signUpBtn.className = "signUpButton"
+        signUpBtn.innerText = "Sign Up"
+        divRight.appendChild(signUpBtn)
+        eventDiv.appendChild(divLeft)
+        eventDiv.appendChild(divRight)
+        li.appendChild(eventDiv)
         theUL.appendChild(li)
     })
     console.log("after for loop")
