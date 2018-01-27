@@ -96,6 +96,10 @@ body {
   font-weight: "500";
 }
 
+.slick-slide {
+    text-align: center;
+}
+
 .contentDiv {
   padding-left: 20px;
   padding-right: 20px;
