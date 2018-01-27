@@ -17,7 +17,7 @@
       },
       {
         "source": "/events/add",
-        "destination": "/add-event.html"
+        "destination": "/create_event.html"
       },
       {
         "source": "/event/**",
